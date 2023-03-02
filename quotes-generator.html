@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes generator </title>
+    <link rel="stylesheet" href="#">
+    <style>
+        body {
+            background-color: saddlebrown;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .container {
+            background-color: antiquewhite;
+            width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .text-muted {
+            color: #00008b;
+        }
+
+        #generate-btn {
+            padding: 12px 15px;
+            border-radius: 14px;
+            background: #7fffd4;
+            border: 1px solid #7fffd4;
+            font-size: 15px;
+            font-family: monospace;
+        }
+
+        .quote-wrapper {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote-wrapper">
+            <h3 class="text-muted">
+                <span class="icon"><img src="/Apostrophe-PNG-Clipart.png" width="50" height="50"></span>
+
+                <p class="quote">Life is too short </p>
+                <span class="icon"> <img src="/Apostrophe-PNG-Clipart.png" width="50" height="50"></span>
+            </h3>
+            <p class="author">Sagar</p>
+
+            <button id="generate-btn">Generate New </button>
+        </div>
+    </div>
+    <!-- New=============================================================       -->
+        <script>
+            function quoteGenrator() {
+                const quotes = [{
+                    quote: "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
+                    authour: "Life"
+                },
+                {
+                    quote: "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
+                    authour: "John Kenneth Galbraith"
+                },
+                {
+                    quote: "God save me from my friends. I can protect myself from my enemies.",
+                    authour: "Claude Louis"
+                },
+                {
+                    quote: "Young dumb broke",
+                    authour: "sagar11"
+                },
+                {
+                    quote: "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance quote her5e",
+                    authour: "Charles Lindbergh"
+                },
+                {
+                    quote: "God save me from my friends. I can protect myself from my enemies. quote here",
+                    authour: "sagClauder"
+                }
+                ];
+
+                const btn = document.getElementById("generate-btn");
+                btn.addEventListener("click", function () {
+                    let random = Math.floor(Math.random() * quotes.length);
+                    const text = document.querySelector(".quote");
+                    const author = document.querySelector(".author");
+                    console.log(random);
+                    // alert('work');
+                    text.innerHTML = quotes[random].quote;
+                    author.innerHTML = quotes[random].authour;
+
+                });
+            }
+
+            quoteGenrator();
+
+        </script>
+
+</body>
+</html>
+
+
